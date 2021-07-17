@@ -1,10 +1,67 @@
- Scanner teclado = new Scanner(System.in);
-        System.out.print( "Introduzca el primer número: " );
-        int primerNumero = teclado.nextInt();
-        System.out.print( "Introduzca el segundo número: " );
-        int segundoNumero = teclado.nextInt();
- 
-        System.out.print( "Su suma es: " );
-        System.out.println( primerNumero+segundoNumero );
+ public static int acumulado = 0;
+    public static Scanner sc = new Scanner(System.in);
+    public static int resultado;
+    
+    public static void main(String[] args) {
+        
+         int valor1;
+         int valor2;
+         String valor;
+         mostrarMenu();
+         valor = sc.next();
+         
+         switch(valor) {
+             case "sumar":
+                 System.out.println("Ingresar valor");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingresar valor");
+                 valor2 = sc.nextInt();
+                 suma(valor1,valor2);    
+                 break;
+                 
+             case "restar":
+                 System.out.println("Ingrese valor");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingrese valor");
+                 valor2 = sc.nextInt();
+                 resta(valor1,valor2);
+                 break;
+             case "multiplicar":
+                 System.out.println("Ingrese el Valor 1: ");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingrese Valor 2");
+                 valor2 = sc.nextInt();
+                 multiplicar(valor1,valor2);
+                 break;
+                 
+             case "dividir":
+                 System.out.println("Ingrese Valor 1");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingrese Valor 2");
+                 valor2 = sc.nextInt();
+                 dividir(valor1,valor2);
+                 break;
+             default:
+                 System.out.println("No es correcta la opción ingresada");
+                 break;
+         }
+       
     }
-}
+
+
+    public static void mostrarMenu(){
+         System.out.println("Ingresar opción:");
+         System.out.println("sumar");
+         System.out.println("restar");
+    }
+    
+    public static void suma(int valor1, int valor2){
+        resultado = valor1+valor2;
+        System.out.println("la suma de los dos valores es:" + resultado);
+    }
+    
+    public static void resta(int valor1, int valor2){
+        resultado = valor1-valor2;
+        System.out.println("la resta de los dos valores es:" + resultado);
+    }
+    
