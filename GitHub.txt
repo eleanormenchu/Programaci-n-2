@@ -26,21 +26,6 @@
                  valor2 = sc.nextInt();
                  resta(valor1,valor2);
                  break;
-             case "multiplicar":
-                 System.out.println("Ingrese el Valor 1: ");
-                 valor1 = sc.nextInt();
-                 System.out.println("Ingrese Valor 2");
-                 valor2 = sc.nextInt();
-                 multiplicar(valor1,valor2);
-                 break;
-                 
-             case "dividir":
-                 System.out.println("Ingrese Valor 1");
-                 valor1 = sc.nextInt();
-                 System.out.println("Ingrese Valor 2");
-                 valor2 = sc.nextInt();
-                 dividir(valor1,valor2);
-                 break;
              default:
                  System.out.println("No es correcta la opción ingresada");
                  break;
