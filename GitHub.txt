@@ -26,6 +26,23 @@
                  valor2 = sc.nextInt();
                  resta(valor1,valor2);
                  break;
+
+             case "multiplicar":
+                 System.out.println("Ingrese el Valor 1: ");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingrese Valor 2");
+                 valor2 = sc.nextInt();
+                 multiplicar(valor1,valor2);
+                 break;
+                 
+             case "dividir":
+                 System.out.println("Ingrese Valor 1");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingrese Valor 2");
+                 valor2 = sc.nextInt();
+                 dividir(valor1,valor2);
+                 break;
+
              default:
                  System.out.println("No es correcta la opción ingresada");
                  break;
@@ -38,6 +55,8 @@
          System.out.println("Ingresar opción:");
          System.out.println("sumar");
          System.out.println("restar");
+         System.out.println("multiplicar");
+         System.out.println("dividir");
     }
     
     public static void suma(int valor1, int valor2){
@@ -51,6 +70,13 @@
     }
     
 
-
-
-Pruebaaaaaaaa
+    public static void dividir(int valor1, int valor2){
+        resultado = valor1/valor2;
+        System.out.println("La división de los dos valores es: "+resultado);
+    }
+    
+    public static void multiplicar(int valor1, int valor2){
+        resultado = valor1*valor2;
+        System.out.println("La multiplicacion de los dos valores es: "+resultado);
+    }
+}
