@@ -1,11 +1,14 @@
- public static int acumulado = 0;
+import java.util.Scanner;
+
+public class Calcu {
+    
     public static Scanner sc = new Scanner(System.in);
-    public static int resultado;
+    public static double resultado;
     
     public static void main(String[] args) {
         
-         int valor1;
-         int valor2;
+         double valor1;
+         double valor2;
          String valor;
          mostrarMenu();
          valor = sc.next();
@@ -14,20 +17,41 @@
              case "sumar":
                  System.out.println("Ingresar valor");
                  valor1 = sc.nextInt();
-                 System.out.println("Ingresar valor");
+                 System.out.println("Ingresar valor ");
                  valor2 = sc.nextInt();
-                 suma(valor1,valor2);    
+                 resultado = suma(valor1,valor2); 
+                 System.out.println("El resultado es: "+resultado);
                  break;
                  
              case "restar":
-                 System.out.println("Ingrese valor");
+                 System.out.println("Ingresar valor");
                  valor1 = sc.nextInt();
-                 System.out.println("Ingrese valor");
+                 System.out.println("Ingresar valor");
                  valor2 = sc.nextInt();
-                 resta(valor1,valor2);
+                 resultado=resta(valor1,valor2);
+                 System.out.println("El resultado es: "+ resultado);
+                 break;
+                 
+             case "multiplicar":
+                 System.out.println("Ingresar valor: ");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingresar valor:");
+                 valor2 = sc.nextInt();
+                 resultado = multiplicar(valor1, valor2);
+                 System.out.println("El resultado es: "+ resultado);
+                 
+                 break;
+                 
+             case "dividir":
+                 System.out.println("Ingresar valor");
+                 valor1 = sc.nextInt();
+                 System.out.println("Ingresar valor");
+                 valor2 = sc.nextInt();
+                 resultado=dividir(valor1,valor2);
+                 System.out.println("El resultado es: "+resultado);
                  break;
              default:
-                 System.out.println("No es correcta la opción ingresada");
+                 System.out.println("Error");
                  break;
          }
        
@@ -35,18 +59,29 @@
 
 
     public static void mostrarMenu(){
-         System.out.println("Ingresar opción:");
+         System.out.println("Ingrese opción:");
          System.out.println("sumar");
          System.out.println("restar");
+         System.out.println("multiplicar");
+         System.out.println("dividir");
     }
     
-    public static void suma(int valor1, int valor2){
-        resultado = valor1+valor2;
-        System.out.println("la suma de los dos valores es:" + resultado);
+    public static double suma(double valor1, double valor2){
+        return valor1+valor2;
     }
     
-    public static void resta(int valor1, int valor2){
-        resultado = valor1-valor2;
-        System.out.println("la resta de los dos valores es:" + resultado);
+    public static double resta(double valor1, double valor2){
+        return valor1 - valor2;
     }
     
+    public static double dividir(double valor1, double valor2){
+        if (valor2 > 0){
+        return valor1 / valor2;
+    }
+        return 0;
+    }
+    
+    public static double multiplicar(double valor1, double valor2){
+        return valor1*valor2;
+    }
+}
